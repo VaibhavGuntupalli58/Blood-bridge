@@ -1,0 +1,180 @@
+/* Base */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: linear-gradient(to right, #ff6b6b, #ee5a52);
+  color: white;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+.nav-left { display: flex; gap: 30px; }
+.nav-left a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.nav-left a:hover { color: #ffdada; }
+.nav-right { margin-right: 100px; }
+.nav-right button {
+  background: white;
+  color: #ee5a52;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.nav-right button:hover {
+  background: #ffdada;
+  color: #ee5a52;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 100px 20px 20px; /* top padding so content clears fixed navbar */
+}
+.header h1 { font-size: 2.5rem; font-weight: 700; margin: 0 0 6px; }
+.header p { font-size: 1.2rem; font-weight: 300; margin: 0; }
+
+/* Home content card */
+.home-content {
+  padding: 40px 60px;
+  background: white;
+  color: #333;
+  border-radius: 15px;
+  margin: 40px auto;
+  width: 90%;
+  max-width: 1100px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.home-content h2 { color: #ee5a52; margin-bottom: 10px; }
+.home-content p { margin-bottom: 20px; line-height: 1.6; }
+
+/* Main grid */
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  padding: 40px 20px 80px;
+}
+
+/* Sections */
+.section {
+  background: white;
+  color: #333;
+  border-radius: 15px;
+  padding: 30px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.section:hover { transform: scale(1.03); }
+.section-title { font-size: 1.5rem; margin-bottom: 10px; font-weight: 600; }
+.description { font-size: 0.95rem; margin-bottom: 20px; }
+.icon { font-size: 2rem; margin-bottom: 10px; }
+
+/* Buttons */
+.main-button {
+  background: #ee5a52;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.main-button:hover {
+  background: #ff6b6b;
+  box-shadow: 0 6px 15px rgba(238, 90, 82, 0.4);
+}
+
+/* Blood groups */
+.blood-groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+.blood-group-btn {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  color: #ee5a52;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.blood-group-btn:hover {
+  background: #fff0f0;
+  box-shadow: 0 4px 10px rgba(238, 90, 82, 0.2);
+}
+
+/* Login popup */
+.login-popup {
+  position: fixed;
+  top: 80px;
+  right: 40px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  z-index: 999;
+  width: 300px;
+  color: #333;
+}
+.login-popup h2 { margin-bottom: 15px; font-size: 1.4rem; text-align: center; }
+.login-popup input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+.login-popup button {
+  width: 100%;
+  padding: 10px;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.login-popup button:hover { background: #ee5a52; }
+.link { color: #ee5a52; text-decoration: none; cursor: pointer; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-container { flex-direction: column; align-items: center; }
+  .navbar { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 20px; }
+  .nav-left { flex-direction: column; gap: 10px; }
+  .nav-right { margin-right: 0; }
+  .home-content { padding: 24px; width: calc(100% - 24px); }
+}
